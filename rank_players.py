@@ -15,6 +15,6 @@ ranked_df = df.sort_values(by='rank')
 
 # Write the entire ranked DataFrame to a new CSV file
 output_file_path = 'ranked_fpl_players.csv' 
-ranked_df.to_csv(output_file_path, index=False)
+ranked_df.to_csv('ranked_fpl_players.csv', index=False)
 
-print(f"The entire ranked list of players has been saved to {output_file_path}")
+print(f"The entire ranked list of players has been saved to {'ranked_fpl_players.csv'}")
