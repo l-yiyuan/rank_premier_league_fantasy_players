@@ -1,0 +1,20 @@
+import pandas as pd
+
+# Load the CSV file
+file_path = 'fpl_player_stats.csv'  # Replace this with the path to your CSV file
+df = pd.read_csv('fpl_player_stats.csv')
+
+# Calculate the ranking metric (total_points/now_cost)
+df['points_per_cost'] = df['total_points'] / df['now_cost']
+
+# Rank the players based on the calculated metric
+df['rank'] = df['points_per_cost'].rank(ascending=False)
+
+# Sort the DataFrame by rank
+ranked_df = df.sort_values(by='rank')
+
+# Write the entire ranked DataFrame to a new CSV file
+output_file_path = 'ranked_fpl_players.csv'  # You can specify your desired output file path
+ranked_df.to_csv(output_file_path, index=False)
+
+print(f"The entire ranked list of players has been saved to {output_file_path}")
