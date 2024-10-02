@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load the CSV file
-file_path = 'fpl_player_stats.csv'  # Replace this with the path to your CSV file
+file_path = 'fpl_player_stats.csv' 
 df = pd.read_csv('fpl_player_stats.csv')
 
 # Calculate the ranking metric (total_points/now_cost)
